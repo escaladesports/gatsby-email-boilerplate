@@ -5,6 +5,7 @@ const options = {
 	lang: 'en',
 	dir: 'ltr', // https://www.w3.org/TR/html4/struct/dirlang.html#blocklevel-bidi
 	bgColor: '#FFFFFF',
+	width: 600,
 }
 
 const propTypes = {
@@ -38,12 +39,11 @@ class Html extends Component {
 					}}>
 					<table bgcolor={options.bgColor} id='__bodyTable__' width='100%' style={{
 							'-webkit-font-smoothing': 'antialiased',
-							width: '100% !important',
+							width: `${options.width}px !important`,
 							background: options.bgColor,
 							'-webkit-text-size-adjust': 'none',
-							margin: 0,
+							margin: '0 auto',
 							padding: 0,
-							minWidth: '100%',
 						}}>
 						<tr>
 							<td align='center' id='___gatsby' dangerouslySetInnerHTML={{ __html: this.props.body }} />
