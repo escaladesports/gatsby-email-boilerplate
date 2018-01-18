@@ -1,0 +1,16 @@
+{
+	"plugins": [
+		["module-resolver", {
+			"root": ["."],
+			"alias": {
+				"components": "./src/components",
+				"templates": "./src/templates",
+				"pages": "./src/pages",
+				"utils": "./utils"
+			},
+			"cwd": "babelrc"
+		}],
+		"dynamic-import-node",
+		"transform-decorators-legacy"
+	]
+}
