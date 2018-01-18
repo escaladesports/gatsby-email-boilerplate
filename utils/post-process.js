@@ -9,6 +9,7 @@ import inlineCss from 'posthtml-inline-css'
 import beautify from 'posthtml-beautify'
 import stripComments from 'strip-html-comments'
 import removeAttributes from 'posthtml-remove-attributes'
+import cheerio from 'cheerio'
 
 async function removeUnusedFiles(){
 	let paths = await glob('public/**/*.{js,css,json,map}')
@@ -36,8 +37,6 @@ async function emailifyHtml(contents){
 		let html = contents[path]
 
 		html = stripComments(html)
-
-		// Remove script and link tags
 		html = await posthtml()
 			.use(inlineCss())
 			.use(removeTags({ tags: ['style', 'script', 'link'] }))
@@ -48,6 +47,34 @@ async function emailifyHtml(contents){
 				'data-react-checksum',
 				'data-react-helmet',
 			]))
+			.process(html)
+		html = html.html
+
+		// Add required CSS/XML
+		let $ = cheerio.load(html)
+		$('html').attr('xmlns:v', 'urn:schemas-microsoft-com:vml')
+			.attr('xmlns:o', 'urn:schemas-microsoft-com:office:office')
+		$('head').append(`
+			<style type="text/css">
+				#__bodyTable__ {
+					margin: 0;
+					padding: 0;
+					width: 100% !important;
+				}
+			</style>
+			<!--[if gte mso 9]>
+				<xml>
+					<o:OfficeDocumentSettings>
+						<o:AllowPNG />
+						<o:PixelsPerInch>96</o:PixelsPerInch>
+					</o:OfficeDocumentSettings>
+				</xml>
+			<![endif]-->
+		`)
+		html = $.html()
+
+		// Clean up
+		html = await posthtml()
 			.use(beautify({
 				rules: { indent: 'tab' }
 			}))

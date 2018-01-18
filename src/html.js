@@ -25,13 +25,6 @@ class Html extends Component {
 					<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 					<meta httpEquiv='X-UA-Compatible' content='IE=edge' />
 					<meta name='viewport' content='width=device-width' />
-					<style type="text/css">{`
-						#__bodyTable__ {
-							margin: 0;
-							padding: 0;
-							width: 100% !important;
-						}
-					`}</style>
 				</head>
 				<body bgcolor={options.bgColor} width='100%' style={{
 						'-webkit-font-smoothing': 'antialiased',
