@@ -1,17 +1,12 @@
 import React from 'react'
-import { Box, Item, Span, A } from 'react-html-email'
+import Block from 'components/block'
 
 export default class Index extends React.Component {
 	render() {
 		return (
-			<Box>
-				<Item width="50%">
-					<Span>Left</Span>
-				</Item>
-				<Item width="50%">
-					<Span>Right</Span>
-				</Item>
-			</Box>
+			<Block padding='0 20'>
+				This is a test
+			</Block>
 		)
 	}
 }
