@@ -37,7 +37,6 @@
     "juice": "^4.2.2",
     "lost": "^8.2.0",
     "npm-run-all": "^4.1.2",
-    "oy-vey": "^0.11.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-loader": "^2.0.9",
     "postcss-nested": "^2.1.2",
@@ -47,7 +46,10 @@
     "posthtml-inline-css": "^1.2.3",
     "posthtml-remove-attributes": "^1.0.0",
     "posthtml-remove-tags": "^0.1.0",
+    "react": "^15.6.0",
+    "react-dom": "^15.6.0",
     "react-helmet": "^5.2.0",
+    "react-html-email": "^3.0.0",
     "strip-html-comments": "^1.0.0",
     "textversionjs": "^1.0.2"
   },
