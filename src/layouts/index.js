@@ -4,9 +4,9 @@ export default class Template extends React.Component {
 	render() {
 		return (
 			<div>
-				Header
+				<p>Header</p>
 				{this.props.children()}
-				Footer
+				<p>Footer</p>
 				<style jsx global>{`
 					html{
 						height: 100%;

@@ -1,4 +1,8 @@
 {
+	"presets": [
+		"es2015",
+		"stage-3"
+	],
 	"plugins": [
 		["module-resolver", {
 			"root": ["."],
@@ -10,7 +14,6 @@
 			},
 			"cwd": "babelrc"
 		}],
-		"dynamic-import-node",
-		"transform-decorators-legacy"
+		"transform-runtime"
 	]
 }

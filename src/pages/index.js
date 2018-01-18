@@ -8,6 +8,7 @@ export default class Index extends React.Component {
 				<style jsx>{`
 					section{
 						width: 300px;
+						color: red;
 					}
 				`}</style>
 			</section>
