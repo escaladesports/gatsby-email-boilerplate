@@ -4247,6 +4247,13 @@ gatsby-cli@^1.1.28:
     yargs "^8.0.2"
     yurnalist "^0.2.1"
 
+gatsby-image@^1.0.39:
+  version "1.0.39"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-1.0.39.tgz#2e8fdab8138e5d36839398874e51783e72e6dedc"
+  dependencies:
+    babel-runtime "^6.26.0"
+    prop-types "^15.6.0"
+
 gatsby-link@^1.6.34:
   version "1.6.34"
   resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.34.tgz#c1ce57cfcb2f693128b2a7d0eff3dde0c6cefec4"
@@ -10228,7 +10235,7 @@ static-extend@^0.1.1:
     define-property "^0.2.5"
     object-copy "^0.1.0"
 
-"static-server@github:escaladesports/static-server":
+static-server@escaladesports/static-server:
   version "3.0.0"
   resolved "https://codeload.github.com/escaladesports/static-server/tar.gz/0ef140cc5af48cba5249575df2bce1a6ca702f6f"
   dependencies:
