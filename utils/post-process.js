@@ -23,7 +23,12 @@ async function createTextFiles(contents){
 	let promises = []
 	for(let path in contents){
 		let html = contents[path]
-		let text = textVersion(html)
+		let text = textVersion(html, {
+			linkProcess: (href, linkText) => {
+				return `${linkText} (${href})`
+			},
+			imgProcess: (src, alt) => ``,
+		})
 		path = parse(path)
 		path = `${path.dir}/${path.name}.txt`
 		promises.push(outputFile(path, text))

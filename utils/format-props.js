@@ -27,6 +27,5 @@ export default function(props){
 	if (props.padding) {
 		props.style.padding = format(props.padding)
 	}
-	console.log(props)
 	return props
 }
