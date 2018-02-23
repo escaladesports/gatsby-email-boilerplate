@@ -77,8 +77,6 @@ async function emailifyHtml(contents){
 			<![endif]-->
 		`)
 
-		process.env.URL = `https://gatsby-boilerplate.netlify.com`
-
 		// Absolute image URLs
 		if (process.env.URL) {
 			$('img').each(function(){
