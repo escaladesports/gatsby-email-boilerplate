@@ -102,6 +102,7 @@ async function emailifyHtml(contents){
 		html = html.html
 
 		promises.push(outputFile(path, html))
+		promises.push(outputFile(`${path}.source.txt`, html))
 	}
 	await Promise.all(promises)
 }

@@ -8,10 +8,35 @@ export default class Index extends React.Component {
 		return (
 			<Block>
 				{Object.keys(templates).map(title => {
-					return <p>
-						<a href={templates[title]}>{title}</a>
-					</p>
+					let path = templates[title]
+					return <ul>
+						<li>
+							<a href={path}>{title}</a>
+						</li>
+						<li>
+							[ <a href={`${path}.source.txt`}>source</a> ]
+						</li>
+						<li>
+							[ <a href={`${path}.txt`}>text</a> ]
+						</li>
+					</ul>
 				})}
+				<style jsx>{`
+					ul{
+						list-style-type: none;
+						padding: 0;
+					}
+					li{
+						display: inline-block;
+						margin-right: 10px;
+					}
+					a{
+						text-decoration: none;
+						&:hover{
+							text-decoration: underline;
+						}
+					}
+				`}</style>
 			</Block>
 		)
 	}
