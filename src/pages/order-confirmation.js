@@ -21,7 +21,7 @@ export default class Index extends React.Component {
 								<Td padding='5' align='center'>x{`{{ qty }}`}</Td>
 								<Td padding='5 0 5 5' align='right'>{`{{ price }}`}</Td>
 							</Tr>
-						{`{{/ each}}`}
+						{`{{/each}}`}
 					</Table>
 
 				</Block>
