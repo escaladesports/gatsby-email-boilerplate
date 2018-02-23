@@ -1,7 +1,7 @@
 import glob from 'globby'
 import { remove, readFile, outputFile } from 'fs-extra'
 import textVersion from 'textversionjs'
-import { parse } from 'path'
+import { parse, join } from 'path'
 import posthtml from 'posthtml'
 import removeTags from 'posthtml-remove-tags'
 import doctype from 'posthtml-doctype'
@@ -76,6 +76,21 @@ async function emailifyHtml(contents){
 				</xml>
 			<![endif]-->
 		`)
+
+		process.env.URL = `https://gatsby-boilerplate.netlify.com`
+
+		// Absolute image URLs
+		if (process.env.URL) {
+			$('img').each(function(){
+				let el = $(this)
+				let src = el.attr(`src`)
+				if (src.indexOf(`://`) === -1) {
+					src = join(process.env.URL, src)
+					el.attr(`src`, src)
+				}
+			})
+		}
+
 		html = $.html()
 
 		// Clean up

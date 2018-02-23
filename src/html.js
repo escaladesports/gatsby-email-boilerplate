@@ -20,7 +20,8 @@ class Html extends Component {
 			<html
 				lang={options.lang}
 				dir={options.dir}
-				xmlns='http://www.w3.org/1999/xhtml'>
+				xmlns='http://www.w3.org/1999/xhtml'
+			>
 				<head>
 					{this.props.headComponents}
 					<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
@@ -28,23 +29,23 @@ class Html extends Component {
 					<meta name='viewport' content='width=device-width' />
 				</head>
 				<body bgcolor={options.bgColor} width='100%' style={{
+					'-webkit-font-smoothing': 'antialiased',
+					width: '100% !important',
+					background: options.bgColor,
+					'-webkit-text-size-adjust': 'none',
+					margin: 0,
+					padding: 0,
+					minWidth: '100%',
+					direction: options.dir,
+				}}>
+					<table bgcolor={options.bgColor} id='__bodyTable__' width='100%' style={{
 						'-webkit-font-smoothing': 'antialiased',
-						width: '100% !important',
+						width: `${options.width}px !important`,
 						background: options.bgColor,
 						'-webkit-text-size-adjust': 'none',
-						margin: 0,
+						margin: '0 auto',
 						padding: 0,
-						minWidth: '100%',
-						direction: options.dir,
 					}}>
-					<table bgcolor={options.bgColor} id='__bodyTable__' width='100%' style={{
-							'-webkit-font-smoothing': 'antialiased',
-							width: `${options.width}px !important`,
-							background: options.bgColor,
-							'-webkit-text-size-adjust': 'none',
-							margin: '0 auto',
-							padding: 0,
-						}}>
 						<tr>
 							<td align='center' id='___gatsby' dangerouslySetInnerHTML={{ __html: this.props.body }} />
 						</tr>
