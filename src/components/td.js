@@ -6,12 +6,15 @@ class Td extends Component {
 	static defaultProps = {
 		verticalAlign: '',
 		horizontalAlign: '',
+		align: '',
 	}
 
 	render() {
 		const props = formatProps(this.props)
 		return (
-			<td {...props}>{this.props.children}</td>
+			<td {...props} align={this.props.align} style={{
+				textAlign: this.props.align
+			}}>{this.props.children}</td>
 		)
 	}
 }

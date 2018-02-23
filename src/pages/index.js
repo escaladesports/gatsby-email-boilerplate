@@ -5,7 +5,7 @@ export default class Index extends React.Component {
 	render() {
 		return (
 			<Block padding='0 20'>
-				This is a test
+				<p><a href='/order-confirmation'>Order Confirmation</a></p>
 			</Block>
 		)
 	}
