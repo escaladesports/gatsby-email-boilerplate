@@ -1,6 +1,6 @@
 {
   "name": "gatsby-email-boilerplate",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "repository": "git@github.com:escaladesports/gatsby-email-boilerplate.git",
   "author": "Kennedy Rose <kennedy@escaladesports.com>",
   "license": "MIT",
@@ -10,8 +10,8 @@
     "postbuild": "babel-node utils/post-process",
     "clean": "run-p clean:cache clean:public",
     "clean:cache": "rimraf .cache",
-	 "clean:public": "rimraf public",
-	 "reset": "esca-scripts reset",
+    "clean:public": "rimraf public",
+    "reset": "esca-scripts reset",
     "serve": "gatsby serve --open"
   },
   "dependencies": {
