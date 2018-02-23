@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 
-import Tr from 'components/tr'
-import Td from 'components/td'
-import formatProps from 'utils/format-props'
+import Tr from './tr'
+import Td from './td'
+import formatProps from '../../utils/format-props'
 
 class Table extends Component {
 	static defaultProps = {
