@@ -31,6 +31,7 @@ async function createTextFiles(contents){
 		})
 		path = parse(path)
 		path = `${path.dir}/${path.name}.txt`
+		console.log(path)
 		promises.push(outputFile(path, text))
 	}
 	await Promise.all(promises)
@@ -102,7 +103,7 @@ async function emailifyHtml(contents){
 		html = html.html
 
 		promises.push(outputFile(path, html))
-		promises.push(outputFile(`${path}.source.txt`, html))
+		promises.push(outputFile(`${path}.txt`, html))
 	}
 	await Promise.all(promises)
 }

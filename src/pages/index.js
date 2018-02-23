@@ -14,10 +14,10 @@ export default class Index extends React.Component {
 							<a href={path}>{title}</a>
 						</li>
 						<li>
-							[ <a href={`${path}.source.txt`}>source</a> ]
+							[ <a href={`${path}/index.html.txt`}>source</a> ]
 						</li>
 						<li>
-							[ <a href={`${path}.txt`}>text</a> ]
+							[ <a href={`${path}/index.txt`}>text</a> ]
 						</li>
 					</ul>
 				})}
