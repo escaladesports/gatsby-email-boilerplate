@@ -10,7 +10,8 @@
     "postbuild": "babel-node utils/post-process",
     "clean": "run-p clean:cache clean:public",
     "clean:cache": "rimraf .cache",
-    "clean:public": "rimraf public",
+	 "clean:public": "rimraf public",
+	 "reset": "esca-scripts reset",
     "serve": "gatsby serve --open"
   },
   "dependencies": {
