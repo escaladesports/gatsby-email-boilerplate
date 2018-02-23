@@ -1,12 +1,16 @@
 import React from 'react'
 
+import Block from '../components/block'
+
 export default class Template extends React.Component {
 	render() {
 		return (
-			<div>
-				<p>Header</p>
+
+			<Block padding='20'>
+				<Block align='center' padding='0 0 20 0'>
+					<img src='/logo.png' />
+				</Block>
 				{this.props.children()}
-				<p>Footer</p>
 				<style jsx global>{`
 					html{
 						height: 100%;
@@ -33,7 +37,14 @@ export default class Template extends React.Component {
 						color: #fff;
 					}
 				`}</style>
-			</div>
+				<style jsx>{`
+					img{
+						width: 200px;
+					}
+				`}</style>
+			</Block>
 		)
 	}
 }
+
+

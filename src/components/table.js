@@ -8,6 +8,7 @@ class Table extends Component {
 	static defaultProps = {
 		cellSpacing: 0,
 		cellPadding: 0,
+		width: '100%',
 	}
 	render(){
 		const props = formatProps(this.props)
