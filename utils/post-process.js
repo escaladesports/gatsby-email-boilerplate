@@ -25,6 +25,9 @@ async function createTextFiles(contents){
 		let html = contents[path]
 		let text = textVersion(html, {
 			linkProcess: (href, linkText) => {
+				if(href.indexOf('mailto:') === 0 || href.indexOf('tel:') === 0){
+					return linkText
+				}
 				return `${linkText} (${href})`
 			},
 			imgProcess: (src, alt) => ``,
