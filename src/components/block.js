@@ -10,7 +10,7 @@ export default class extends React.Component {
 			<Table {...this.props}>
 				<Tr>
 					<Td align={this.props.align} style={{
-						textAlign: this.props.align
+						textAlign: this.props.align,
 					}}>{this.props.children}</Td>
 				</Tr>
 			</Table>

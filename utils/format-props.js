@@ -15,9 +15,13 @@ export default function(props){
 		props.style.verticalAlign = props.verticalAlign
 		delete props.verticalAlign
 	}
+	if('align' in props){
+		props.horizontalAlign = props.align
+		delete props.align
+	}
 	if ('horizontalAlign' in props) {
 		props.align = props.horizontalAlign
-		props.style.horizontalAlign = props.horizontalAlign
+		props.style.textAlign = props.horizontalAlign
 		delete props.horizontalAlign
 	}
 	if (props.padding) {
