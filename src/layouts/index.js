@@ -2,7 +2,6 @@ import React from 'react'
 
 import Block from '../components/block'
 import Header from '../components/header'
-import Footer from '../components/footer'
 
 export default class Template extends React.Component {
 	render() {
@@ -10,7 +9,6 @@ export default class Template extends React.Component {
 			<Block padding='20'>
 				<Header />
 				{this.props.children()}
-				<Footer />
 				<style jsx global>{`
 					html{
 						height: 100%;

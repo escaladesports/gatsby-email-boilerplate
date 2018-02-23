@@ -11,19 +11,11 @@ export default class Index extends React.Component {
 		return (
 			<div>
 				<Block padding='0 0 20 0'>
-					<p>{`{{ order_msg }}`}</p>
+					<p>{`{{ name }}`}, your order has shipped!</p>
 					<p>{`Order: {{ order_id }} | Date Ordered: {{ date }}`}</p>
-
-					<Table>
-						{`{{#each products}}`}
-							<Tr>
-								<Td padding='5 5 5 0'>{`{{ name }}`}</Td>
-								<Td padding='5' align='center'>x{`{{ qty }}`}</Td>
-								<Td padding='5 0 5 5' align='right'>{`{{ price }}`}</Td>
-							</Tr>
-						{`{{/ each}}`}
-					</Table>
-
+				</Block>
+				<Block padding='0 0 20 0'>
+					{`{{{ trackcode_html }}}`}
 				</Block>
 				<Table>
 					<Tr>
