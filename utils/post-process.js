@@ -79,12 +79,13 @@ async function emailifyHtml(contents){
 
 		// Absolute image URLs
 		if (process.env.URL) {
-			console.log(process.env.URL)
 			$('img').each(function(){
 				let el = $(this)
 				let src = el.attr(`src`)
 				if (src.indexOf(`://`) === -1) {
-					src = join(process.env.URL, src)
+					let url = process.env.URL.split(`://`)
+					src = join(url[1], src)
+					src = `${url[0]}://${src}`
 					el.attr(`src`, src)
 				}
 			})
