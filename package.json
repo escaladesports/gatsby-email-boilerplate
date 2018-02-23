@@ -10,8 +10,8 @@
     "postbuild": "babel-node utils/post-process",
     "clean": "run-p clean:cache clean:public",
     "clean:cache": "rimraf .cache",
-	 "clean:public": "rimraf public",
-	 "netlify": "opn https://app.netlify.com/sites/gatsby-email-boilerplate/deploys",
+    "clean:public": "rimraf public",
+    "netlify": "opn https://app.netlify.com/sites/gatsby-email-boilerplate/deploys",
     "reset": "esca-scripts reset",
     "serve": "gatsby serve --open"
   },
@@ -25,6 +25,7 @@
     "babel-preset-stage-3": "^6.24.1",
     "babel-runtime": "^6.26.0",
     "bluebird": "^3.5.1",
+    "change-case": "^3.0.1",
     "cheerio": "^1.0.0-rc.2",
     "css-mqpacker": "^6.0.1",
     "cssnano": "^3.10.0",
