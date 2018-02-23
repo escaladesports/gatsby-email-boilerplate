@@ -79,6 +79,7 @@ async function emailifyHtml(contents){
 
 		// Absolute image URLs
 		if (process.env.URL) {
+			console.log(process.env.URL)
 			$('img').each(function(){
 				let el = $(this)
 				let src = el.attr(`src`)
