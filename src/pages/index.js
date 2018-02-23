@@ -6,6 +6,7 @@ export default class Index extends React.Component {
 		return (
 			<Block padding='0 20'>
 				<p><a href='/order-confirmation'>Order Confirmation</a></p>
+				<p><a href='/shipping-confirmation'>Shipping Confirmation</a></p>
 			</Block>
 		)
 	}
