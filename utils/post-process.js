@@ -11,6 +11,8 @@ import stripComments from 'strip-html-comments'
 import removeAttributes from 'posthtml-remove-attributes'
 import cheerio from 'cheerio'
 
+import custom from './posthtml-custom'
+
 async function removeUnusedFiles(){
 	let paths = await glob('public/**/*.{js,css,json,map}')
 	let promises = paths.map(path => {
@@ -56,49 +58,7 @@ async function emailifyHtml(contents){
 				'data-react-checksum',
 				'data-react-helmet',
 			]))
-			.process(html)
-		html = html.html
-
-		// Add required CSS/XML
-		let $ = cheerio.load(html)
-		$('html').attr('xmlns:v', 'urn:schemas-microsoft-com:vml')
-			.attr('xmlns:o', 'urn:schemas-microsoft-com:office:office')
-		$('head').append(`
-			<style type="text/css">
-				#__bodyTable__ {
-					margin: 0;
-					padding: 0;
-					width: 100% !important;
-				}
-			</style>
-			<!--[if gte mso 9]>
-				<xml>
-					<o:OfficeDocumentSettings>
-						<o:AllowPNG />
-						<o:PixelsPerInch>96</o:PixelsPerInch>
-					</o:OfficeDocumentSettings>
-				</xml>
-			<![endif]-->
-		`)
-
-		// Absolute image URLs
-		if (process.env.URL) {
-			$('img').each(function(){
-				let el = $(this)
-				let src = el.attr(`src`)
-				if (src.indexOf(`://`) === -1) {
-					let url = process.env.URL.split(`://`)
-					src = join(url[1], src)
-					src = `${url[0]}://${src}`
-					el.attr(`src`, src)
-				}
-			})
-		}
-
-		html = $.html()
-
-		// Clean up
-		html = await posthtml()
+			.use(custom())
 			.use(beautify({
 				rules: { indent: 'tab' }
 			}))
