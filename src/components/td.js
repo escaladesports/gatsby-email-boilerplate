@@ -5,8 +5,8 @@ import formatProps from '../../utils/format-props'
 class Td extends Component {
 	static defaultProps = {
 		verticalAlign: 'top',
-		horizontalAlign: '',
-		align: '',
+		horizontalAlign: 'left',
+		align: 'left',
 	}
 
 	render() {

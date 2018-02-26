@@ -3,7 +3,7 @@ import Table, { Tr, Td } from './table'
 
 export default class extends React.Component {
 	static defaultProps = {
-		align: '',
+		align: 'left',
 	}
 	render(){
 		return (
